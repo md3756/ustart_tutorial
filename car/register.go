@@ -11,8 +11,8 @@ func (car *Car) Register(ctx context.Context, req *carpb.RegisterRequest) (*carp
 
 	uuid := randString(32)
 
-	_, err := car.strg.Lookup(ctx, uuid)
-	if err != nil && err != car.strg.ErrUserDoesNotExist() {
+	_, err := car.strg.Lookup(ctx, cid)
+	if err != nil && err != car.strg.ErrCarDoesNotExist() {
 		return nil, err
 	}
 	if err == nil {
