@@ -65,7 +65,7 @@ func mapping(indexName string) string {
 				}
 			},
 			"Available":{
-				"type":"text",
+				"type":"bool",
 				"analyzer":"my_analyzer",
 				"fields":{
 					"raw":{
@@ -73,15 +73,30 @@ func mapping(indexName string) string {
 					}
 				}
 			},
-			"History":{
-				"type":"text",
-				"analyzer":"my_analyzer",
-				"fields":{
-					"raw":{
-						"type":"keyword"
-					}
-				}
+			"AccidentHistory": {
+				"type":"nested", 
+				"properties":{
+					"Date":{
+						"type":"text",
+						"analyzer":"my_analyzer",
+						"fields":{
+							"raw":{
+								"type":"keyword"
+							}
+						}
+					},
+					"Details":{
+						"type":"text",
+						"analyzer":"my_analyzer",
+						"fields":{
+							"raw":{
+								"type":"keyword"
+							}
+						}
+					},
+				}	
 			},
+			
 			
 		}
 	}	
