@@ -4,11 +4,11 @@ import (
 	"context"
 	"encoding/json"
 
+	"github.com/md3756/ustart_tutorial/car/carpb"
 	"github.com/olivere/elastic"
-	"github.com/sea350/ustart_tutorial/car/carpb"
 )
 
-// Lookup retreives a customer doc using a certain UUID
+// Lookup retreives a car doc using a certain CID
 func (estor *ElasticStore) Lookup(ctx context.Context, cid string) (carpb.Car, error) {
 	var car carpb.Car
 
