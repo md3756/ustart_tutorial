@@ -8,11 +8,11 @@ import (
 	"github.com/olivere/elastic"
 )
 
-// Lookup retreives a customer doc using a certain UUID
-func (estor *ElasticStore) Lookup(ctx context.Context, uuid string) (recordpb.Record, error) {
+// Lookup retreives a record doc using a certain CarID
+func (estor *ElasticStore) Lookup(ctx context.Context, CarID string) (recordpb.Record, error) {
 	var record recordpb.Record
 
-	termQuery := elastic.NewTermQuery("UUID", uuid)
+	termQuery := elastic.NewTermQuery("CarID", CarID)
 	res, err := estor.client.Search().
 		Index(estor.eIndex).
 		Query(termQuery).

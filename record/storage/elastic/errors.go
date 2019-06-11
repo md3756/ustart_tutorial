@@ -7,15 +7,15 @@ import "errors"
 //the variables are not exported so they cant be modified by anything outside the package
 
 var (
-	// errUserDoesNotExist user doesnt exist
-	errRecordDoesNotExist = errors.New("User does not exist")
+	// errRecordDoesNotExist record doesnt exist
+	errRecordDoesNotExist = errors.New("Record does not exist")
 
 	// errTooManyResults if more than one result per email shows
 	errTooManyResults = errors.New("Too many results, a crititcal error has occurred")
 )
 
-//ErrUserDoesNotExist returns a standardized error
-func (estor *ElasticStore) ErrUserDoesNotExist() error {
+//ErrRecordDoesNotExist returns a standardized error
+func (estor *ElasticStore) ErrRecordDoesNotExist() error {
 	return errRecordDoesNotExist
 }
 
