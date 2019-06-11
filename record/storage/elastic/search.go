@@ -13,8 +13,8 @@ func (estor *ElasticStore) Search(ctx context.Context, searchTerms []string, sea
 
 	for _, term := range searchTerms {
 		if searchName {
-			query = query.Should(elastic.NewFuzzyQuery("FirstName", term).Fuzziness("AUTO"))
-			query = query.Should(elastic.NewFuzzyQuery("LastName", term).Fuzziness("AUTO"))
+			query = query.Should(elastic.NewFuzzyQuery("CarID", term).Fuzziness("AUTO"))
+			query = query.Should(elastic.NewFuzzyQuery("UserID", term).Fuzziness("AUTO"))
 		}
 	}
 
