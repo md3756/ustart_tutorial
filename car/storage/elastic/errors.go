@@ -14,8 +14,8 @@ var (
 	errTooManyResults = errors.New("Too many results, a crititcal error has occurred")
 )
 
-//ErrUserDoesNotExist returns a standardized error
-func (estor *ElasticStore) ErrUserDoesNotExist() error {
+//ErrCarDoesNotExist returns a standardized error
+func (estor *ElasticStore) ErrCarDoesNotExist() error {
 	return errCarDoesNotExist
 }
 
