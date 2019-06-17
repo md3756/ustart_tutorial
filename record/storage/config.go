@@ -13,12 +13,7 @@ type Config struct {
 	SQLConfig     *sqlstore.Config
 }
 
-// ESNewConfig returns a default config object
-func ESNewConfig() *Config {
+// SQLNewConfig returns a default config object
+func SQLNewConfig() *Config {
 	return &Config{SQLConfig: sqlstore.NewConfig()}
 }
-
-// SQLNewConfig returns a default config object
-// func SQLNewConfig() *Config {
-// 	return &Config{SQLConfig: sqlstore.NewConfig()}
-// }
