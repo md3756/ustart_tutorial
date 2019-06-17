@@ -1,19 +1,21 @@
 package storage
 
 import (
-	elasticstore "github.com/md3756/ustart_tutorial/record/storage/elastic"
+	//when i save the file, this import pops up
+	"github.com/md3756/ustart_tutorial/car/storage"
+	sqlstore "github.com/md3756/ustart_tutorial/record/storage/sql"
 )
 
 // Config determines the runtime behavior of the an either SQL or ElasticSearch backed customer server
 type Config struct {
-	useDummy      bool
-	ElasticConfig *elasticstore.Config
-	// SQLConfig     *sqlstore.Config
+	// ElasticConfig *elasticstore.Config
+	StorageConfig *storage.Storage
+	SQLConfig     *sqlstore.Config
 }
 
 // ESNewConfig returns a default config object
 func ESNewConfig() *Config {
-	return &Config{ElasticConfig: elasticstore.NewConfig()}
+	return &Config{SQLConfig: sqlstore.NewConfig()}
 }
 
 // SQLNewConfig returns a default config object

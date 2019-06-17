@@ -1,10 +1,11 @@
 package storage
 
 import (
-	elasticstore "github.com/md3756/ustart_tutorial/record/storage/elastic"
+	sqlstore "github.com/md3756/ustart_tutorial/record/storage/sql"
 )
 
-// NewES determines the runtime behavior of the ElasticSearch-backed customer server
-func NewES(config *Config) (Storage, error) {
-	return elasticstore.New(config.ElasticConfig)
+// NewSQL determines the runtime behavior of the ElasticSearch-backed customer server
+func NewSQL(config *Config) (Storage, error) {
+	strg, err := &Config{SQLConfig: sqlstore.NewConfig()}
+	return strg, err
 }
