@@ -2,8 +2,7 @@ package record
 
 import (
 	"context"
-
-	"github.com/md3756/ustart_tutorial/record/recordpb"
+	// "github.com/md3756/ustart_tutorial/record/recordpb"
 )
 
 // Pull retreives all customer data based off of a username

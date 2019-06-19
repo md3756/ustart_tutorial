@@ -2,8 +2,9 @@ package sqlstore
 
 // Config is the configuration for the sql storage client
 type Config struct {
-	DriverNameHost  string
+	DriverName      string
 	Port            string
+	Host            string
 	DBName          string
 	Username        string
 	Password        string
@@ -13,6 +14,12 @@ type Config struct {
 // NewConfig creates a default config struct
 func NewConfig() *Config {
 	return &Config{
-		DriverName: "",
+		DriverName:      "",
+		Port:            "",
+		Host:            "",
+		DBName:          "",
+		Username:        "",
+		Password:        "",
+		RecordTableName: "",
 	}
 }

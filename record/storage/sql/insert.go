@@ -11,7 +11,7 @@ func (dbConn *SQLStore) Insert(ctx context.Context, carID, userID, dateStart str
 		"INSERT INTO %s (carID, userID, dateStart, rate) VALUES ('%s', '%s', '%s', '"+strconv.Itoa(rate)+"');",
 		dbConn.recordTableName, carID, userID, dateStart, rate)
 
-	_, err := dbConn.dc.QueryContext(ctx, queryString)
+	_, err := dbConn.db.QueryContext(ctx, queryString)
 
 	return err
 }
