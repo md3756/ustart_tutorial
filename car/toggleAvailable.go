@@ -8,6 +8,6 @@ import (
 
 // ToggleAvailable ...
 func (car *Car) ToggleAvailable(ctx context.Context, req *carpb.ToggleRequest) (*carpb.ToggleResponse, error) {
-	bool c = CheckAvailable(req)
+	c, err := CheckAvailable(req)
 	return UpdateAvailable(c)
 }

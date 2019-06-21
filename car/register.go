@@ -9,9 +9,9 @@ import (
 // Register is a generic register function that registers a user in a database
 func (car *Car) Register(ctx context.Context, req *carpb.RegisterRequest) (*carpb.RegisterResponse, error) {
 
-	uuid := randString(32)
+	CID := randString(32)
 
-	_, err := car.strg.Lookup(ctx, cid)
+	_, err := car.strg.Lookup(ctx, CID)
 	if err != nil && err != car.strg.ErrCarDoesNotExist() {
 		return nil, err
 	}
@@ -19,7 +19,7 @@ func (car *Car) Register(ctx context.Context, req *carpb.RegisterRequest) (*carp
 		return nil, errCarExists
 	}
 
-	err = car.strg.Register(ctx, cid, req.Make, req.Model, req.Year, req.Color, req.Class)
+	err = car.strg.Register(ctx, CID, req.Make, req.Model, req.Year, req.Color, req.Class)
 	if err != nil {
 		return nil, err
 	}

@@ -9,7 +9,7 @@ import (
 // Search retreives a list of minimal car data based off search queries
 func (car *Car) Search(ctx context.Context, req *carpb.SearchRequest) (*carpb.SearchResponse, error) {
 
-	queryArr := []string{req.Make, req.Model, req.Year, req.Color, req.Class}
+	queryArr := []string{req.FirstName, req.LastName, req.DOB}
 	// filterArr := strings.FieldsFunc(req.Filters, split)
 
 	searchName := true
