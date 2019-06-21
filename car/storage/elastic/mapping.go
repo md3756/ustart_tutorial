@@ -16,7 +16,6 @@ func mapping(indexName string) string {
 			}
 		}
 	},
-
 	"mappings":{
 		"properties":{
 			"Make":{
