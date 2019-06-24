@@ -8,7 +8,7 @@ import (
 	"github.com/olivere/elastic"
 )
 
-// Lookup retreives a car doc using a certain CID
+//Lookup retreives a car doc using a certain CID
 func (estor *ElasticStore) Lookup(ctx context.Context, cid string) (bool, error) {
 	var car carpb.Car
 

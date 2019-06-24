@@ -4,8 +4,8 @@ import (
 	"context"
 )
 
-//ToggleAvailable ...
-func (estor *ElasticStore) ToggleAvailable(ctx context.Context, cid string, avail bool) error {
+//UpdateAvailable ...
+func (estor *ElasticStore) UpdateAvailable(ctx context.Context, cid string, avail bool) error {
 	avail = !avail
 	_, err := estor.client.Update().
 		Index(estor.eIndex).

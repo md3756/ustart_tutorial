@@ -22,7 +22,7 @@ func (car *Car) Search(ctx context.Context, req *carpb.SearchRequest) (*carpb.Se
 	var res []*carpb.Car
 	var resErr error
 	for _, id := range ids {
-		ca, err := car.strg.Lookup(ctx, id)
+		ca, err := Lookup(ctx, id)
 		if err != nil {
 			res = append(res, &ca)
 		} else {
