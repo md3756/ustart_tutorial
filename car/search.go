@@ -11,7 +11,6 @@ func (car *Car) Search(ctx context.Context, req *carpb.SearchRequest) (*carpb.Se
 
 	queryArr := []string{req.FirstName, req.LastName, req.DOB}
 	// filterArr := strings.FieldsFunc(req.Filters, split)
-
 	searchName := true
 
 	ids, err := car.strg.Search(ctx, queryArr, searchName, make(map[string][]string), req.Scroll)
@@ -22,7 +21,7 @@ func (car *Car) Search(ctx context.Context, req *carpb.SearchRequest) (*carpb.Se
 	var res []*carpb.Car
 	var resErr error
 	for _, id := range ids {
-		ca, err := Lookup(ctx, id)
+		ca, err := car.strg.LookupCar(ctx, id)
 		if err != nil {
 			res = append(res, &ca)
 		} else {
