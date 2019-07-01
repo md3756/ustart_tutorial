@@ -16,14 +16,14 @@ func (rapi *RESTAPI) Register(w http.ResponseWriter, req *http.Request) {
 	defer cancel()
 
 	req.ParseForm()
-	make := req.Form.Get("make")
+	Make := req.Form.Get("make")
 	model := req.Form.Get("model")
 	year := req.Form.Get("year")
 	color := req.Form.Get("color")
 	class := req.Form.Get("class")
 
 	lookReq := &carpb.RegisterRequest{
-		Make:  make,
+		Make:  Make,
 		Model: model,
 		Year:  year,
 		Color: color,
