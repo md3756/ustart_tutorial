@@ -9,9 +9,9 @@ import (
 
 	_ "github.com/lib/pq"
 	"github.com/md3756/ustart_tutorial/api/rest/car"
-	//prof "github.com/sea350/ustart_tutorial/customer"
-	//"github.com/sea350/ustart_tutorial/customer/storage"
-	//elasticstore "github.com/sea350/ustart_tutorial/customer/storage/elastic"
+	// logicCar "github.com/md3756/ustart_tutorial/car"
+	// storage "github.com/md3756/ustart_tutorial/car/storage"
+	// elasticstore "github.com/md3756/ustart_tutorial/car/storage/elastic"
 )
 
 func main() {
@@ -19,8 +19,22 @@ func main() {
 	log.Println("Dialing up...")
 
 	var config car.Config
+	// config := car.Config{
+	// 	Port: 5001,
+	// 	CarCfg: &logicCar.Config{
+	// 		StorageConfig: &storage.Config{
+	// 			ElasticConfig: &elasticstore.Config{
+	// 				ElasticAddr: "localhost:9200",
+	// 				EIndex:      "car",
+	// 				EType:       "test-car_data",
+	// 			},
+	// 		},
+	// 	},
+	// }
 
-	//Importing configuration from json
+	// bytes, _ := json.Marshal(config)
+	// fmt.Print(string(bytes))
+	// Importing configuration from json
 	file, err := os.Open("config.json")
 	if err != nil {
 		panic(err)
