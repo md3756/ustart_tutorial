@@ -12,7 +12,7 @@ func (car *Car) ToggleAvailable(ctx context.Context, req *carpb.ToggleRequest) (
 	if err != nil {
 		return nil, err
 	}
-	er := car.strg.UpdateAvailable(ctx, req.CID, c)
+	available, er := car.strg.UpdateAvailable(ctx, req.CID, c)
 
-	return nil, er
+	return &carpb.ToggleResponse{NewStatus: available}, er
 }

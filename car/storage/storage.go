@@ -12,7 +12,7 @@ type Storage interface {
 	Search(context.Context, []string, bool, map[string][]string, string) ([]string, error)
 	Lookup(context.Context, string) (bool, error)
 	LookupCar(context.Context, string) (carpb.Car, error)
-	UpdateAvailable(context.Context, string, bool) error
+	UpdateAvailable(context.Context, string, bool) (bool, error)
 	CheckAvailable(context.Context, string) (bool, error)
 	// rest of the functions
 	ErrCarDoesNotExist() error
